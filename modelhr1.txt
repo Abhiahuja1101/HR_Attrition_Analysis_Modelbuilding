@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HR Employee Attrition Prediction</title>
+    <style>
+        /* Add your CSS styling here */
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('https://blog.vantagecircle.com/content/images/size/w1000/2020/10/Attrition_Rate.png');
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: rgba(255, 255, 255, 0.8);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .attrition-box {
+            margin-top: 20px;
+            height: 100px;
+            width: 100px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .attrition-yes {
+            background-color: red;
+        }
+
+        .attrition-no {
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>HR Employee Attrition</h1>
+        <form id="attrition-form">
+            <div class="form-group">
+                <label for="age">Age:</label>
+                <input type="number" id="age" min="22" max="61" required>
+            </div>
+
+            <div class="form-group">
+                <label for="gender">Gender:</label>
+                <input type="number" id="gender" min="0" max="1" required>
+            </div>
+
+            <div class="form-group">
+                <label for="education-level">Education Level:</label>
+                <input type="number" id="education-level" min="1" max="5" required>
+            </div>
+
+            <div class="form-group">
+                <label for="salary">Salary:</label>
+                <input type="number" id="salary" min="30016" max="149989" required>
+            </div>
+
+            <div class="form-group">
+                <label for="performance-rating">Performance Rating:</label>
+                <input type="number" id="performance-rating" min="1" max="5" required>
+            </div>
+
+            <div class="form-group">
+                <label for="worklife-balance">Work-Life Balance:</label>
+                <input type="number" id="worklife-balance" min="1" max="5" required>
+            </div>
+
+            <div class="form-group">
+                <label for="employee-satisfaction">Employee Satisfaction:</label>
+                <input type="number" id="employee-satisfaction" min="1" max="5" required>
+            </div>
+
+            <div class="form-group">
+                <label for="training-hours">Training Hours:</label>
+                <input type="number" id="training-hours" min="10" max="99" required>
+            </div>
+
+            <div class="form-group">
+                <label for="years-in-current-role">Years in Current Role:</label>
+                <input type="number" id="years-in-current-role" min="0" max="9" required>
+            </div>
+
+            <div class="form-group">
+                <label for="years-since-last-promotion">Years Since Last Promotion:</label>
+                <input type="number" id="years-since-last-promotion" min="0" max="9" required>
+            </div>
+
+            <div class="form-group">
+                <label for="years-with-current-manager">Years With Current Manager:</label>
+                <input type="number" id="years-with-current-manager" min="0" max="9" required>
+            </div>
+
+            <input type="submit" value="Predict Attrition">
+        </form>
+
+        <div id="attrition-box" class="attrition-box"></div>
+    </div>
+
+    <script>
+        const attritionForm = document.getElementById('attrition-form');
+        const attritionBox = document.getElementById('attrition-box');
+
+        attritionForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const age = parseInt(document.getElementById('age').value);
+            const gender = parseInt(document.getElementById('gender').value);
+            const educationLevel = parseInt(document.getElementById('education-level').value);
+            const salary = parseInt(document.getElementById('salary').value);
+            const performanceRating = parseInt(document.getElementById('performance-rating').value);
+            const workLifeBalance = parseInt(document.getElementById('worklife-balance').value);
+            const employeeSatisfaction = parseInt(document.getElementById('employee-satisfaction').value);
+            const trainingHours = parseInt(document.getElementById('training-hours').value);
+            const yearsInCurrentRole = parseInt(document.getElementById('years-in-current-role').value);
+            const yearsSinceLastPromotion = parseInt(document.getElementById('years-since-last-promotion').value);
+            const yearsWithCurrentManager = parseInt(document.getElementById('years-with-current-manager').value);
+
+            // Call your ML model and get the attrition prediction
+            const predictedAttrition = predictAttrition(age, gender, educationLevel, salary, performanceRating, workLifeBalance, employeeSatisfaction, trainingHours, yearsInCurrentRole, yearsSinceLastPromotion, yearsWithCurrentManager);
+
+            // Update the attrition box based on the prediction
+            attritionBox.textContent = predictedAttrition;
+            attritionBox.classList.remove('attrition-yes', 'attrition-no');
+            attritionBox.classList.add(predictedAttrition.toLowerCase() === 'yes' ? 'attrition-yes' : 'attrition-no');
+        });
+
+        function predictAttrition(age, gender, educationLevel, salary, performanceRating, workLifeBalance, employeeSatisfaction, trainingHours, yearsInCurrentRole, yearsSinceLastPromotion, yearsWithCurrentManager) {
+            // Add code to call your ML model and return the prediction
+            // You can replace this placeholder with your actual ML model integration code
+            return 'Yes';
+        }
+    </script>
+</body>
+</html>
