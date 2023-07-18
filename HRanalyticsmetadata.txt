@@ -1,0 +1,45 @@
+
+1. EmployeeID: Unique identifier for each employee.
+   - Data type: Integer
+
+2. Age: Age of the employee.
+   - Data type: Integer
+
+3. Gender: Gender of the employee.
+   - Data type: String
+
+4. Department: Department in which the employee works.
+   - Data type: String
+
+5. YearsOfExperience: Number of years of experience the employee has.
+   - Data type: Integer
+
+6. EducationLevel: Level of education of the employee (1 = High School, 2 = Bachelor's Degree, 3 = Master's Degree, 4 = PhD, 5 = Other).
+   - Data type: Integer
+
+7. Salary: Salary of the employee.
+   - Data type: Integer
+
+8. PerformanceRating: Performance rating of the employee (1 = Poor, 2 = Below Average, 3 = Average, 4 = Above Average, 5 = Excellent).
+   - Data type: Integer
+
+9. WorkLifeBalance: Work-life balance rating of the employee (1 = Poor, 2 = Below Average, 3 = Average, 4 = Above Average, 5 = Excellent).
+   - Data type: Integer
+
+10. EmployeeSatisfaction: Employee satisfaction rating (1 = Low, 2 = Below Average, 3 = Average, 4 = Above Average, 5 = High).
+    - Data type: Integer
+
+11. TrainingHours: Number of training hours the employee has undergone.
+    - Data type: Integer
+
+12. YearsInCurrentRole: Number of years the employee has been in the current role.
+    - Data type: Integer
+
+13. YearsSinceLastPromotion: Number of years since the employee's last promotion.
+    - Data type: Integer
+
+14. YearsWithCurrentManager: Number of years the employee has been working with the current manager.
+    - Data type: Integer
+
+15. Attrition: Indicates whether the employee has attrited or not (Yes = Attrited, No = Not Attrited).
+    - Data type: String
